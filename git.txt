@@ -1,0 +1,83 @@
+local
+remote
+
+remote url
+local repo
+remote repo
+
+ssh-key
+
+public/private key
+gitignore
+
+
+
+
+git init .
+
+
+git add <file_name>
+git add .
+
+git commit -m "initial commit"
+if error
+git config --global user.email "gitemail.com"
+git branch
+git remote add origin remote-url
+git push origin branch_name
+
+
+
+
+
+
+
+
+git add <file_name>
+git add .
+git commit -m "initial commit"
+git branch
+git push origin branch_name
+
+
+
+ssh-keygen
+public/private key => copy public key and store in github > setting> ssh and gpg > new ssh key > key paste (public key)
+
+
+github.com => create repo => remote url (ssh, http ,gh)
+
+
+
+# local(folder)
+
+git init .(.git hidden floder, untracked)
+
+
+git add day1.py or git add .
+git commit -m "add login feat"
+
+git add day2.py
+git commit -m "reset password"
+
+
+git add .
+git commit -m "login and reset password"
+
+
+origin = remote url
+
+local <--> remote
+git remote add origin remote url
+git remote add sudan remote url
+
+
+git branch
+* main
+* Master
+
+
+git branch -M "develop" dev production
+
+git push origin master
+git push
