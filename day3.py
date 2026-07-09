@@ -110,4 +110,9 @@ print(students)
 print("____decending order___")
 students.sort(reverse=True)
 print(students)
+
+List:
+name=['Dipesh', 'Denish', 'Jenish']
+name.sort(reverse=True)
+print(name)
 """
