@@ -197,29 +197,57 @@ for i in range(1, n + 1):
     for j in range(1, subject_count + 1):
         subject = input(f"Enter Subject {j}: ")
         Student[f"Student{i}"]["Subjects"].append(subject)
+
 print("\nStudent Records:")
-print(Student)
+print("\n========== Student Records ==========\n")
+
+for i in range(1, n + 1):
+    print(f"Student {i}")
+    print("Name     :", Student[f"Student{i}"]["Name"])
+    print("Age      :", Student[f"Student{i}"]["Age"])
+    print("Faculty  :", Student[f"Student{i}"]["Faculty"])
+    print("Subjects :", Student[f"Student{i}"]["Subjects"])
+    print("City     :", Student[f"Student{i}"]["Address"]["City"])
+    print("Ward No  :", Student[f"Student{i}"]["Address"]["Ward_no"])
+    print("Street   :", Student[f"Student{i}"]["Address"]["Street"])
+    print("-" * 40)
+
+print("\n========== Dictionary Information ==========\n")
+
+print("Keys:")
 print(Student.keys())
+
+print("\nValues:")
 print(Student.values())
+
+print("\nItems:")
 print(Student.items())
-print(len(Student))
+
+print("\nTotal Student Records:", len(Student))
+
+print("\n========== Update Faculty ==========\n")
 
 faculty_no = int(input("Enter the student number to update: "))
 new_faculty = input("Enter new faculty: ")
 
 Student[f"Student{faculty_no}"].update({"Faculty": new_faculty})
 
-# Remove Age
-age_pop = Student["Student1"].pop("Age")
-print("Removed Age:", age_pop)
+print("\nFaculty Updated Successfully!")
+print("New Faculty:", Student[f"Student{faculty_no}"]["Faculty"])
 
-# Check Student1
+print("\n========== Remove Age ==========\n")
+
+age_pop = Student["Student1"].pop("Age")
+print("Removed Age of Student1:", age_pop)
+
+print("\n========== Student Status ==========\n")
+
 if len(Student["Student1"]["Subjects"]) == 5:
     city = Student["Student1"]["Address"]["City"].upper()
 
     if city == "KATHMANDU":
-        print("Local Student")
+        print("Student1 Status : Local Student")
     else:
-        print("Outside Valley")
+        print("Student1 Status : Outside Valley")
 else:
-    print("Incomplete subject list")
+    print("Student1 Status : Incomplete Subject List")
