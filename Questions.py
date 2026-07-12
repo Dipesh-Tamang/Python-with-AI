@@ -1,5 +1,5 @@
 '''
-#Question Solving
+#Question 1 Solving
 List=["Banana","Apple","Cereals","Coffee","Milk","Tomato","Potato"]
 List.append("Ps5")
 List.append("Milk")
@@ -80,7 +80,7 @@ data = "Female" if gender=="F" else "Male"
 print(data)
 '''
 '''
-#Question1
+#Question 4
 account_balance = 500000
 pin1=9999
 daily_limit=20000
@@ -97,7 +97,7 @@ else:
     print("Wrong Password")
 
 
-#Question2
+#Question 5
 Name=input("Enter your name:").upper()
 
 if Name=="DIPESH":
@@ -178,4 +178,48 @@ if Name=="ABHISEK":
 else:
     print("No result found")
 '''
+#Question 6 Solving 
+Student = {}
+n = int(input("How many student records do you want to enter? "))
+for i in range(1, n + 1):
+    Student[f"Student{i}"] = {
+        "Name": input(f"Enter Student {i} Name: "),
+        "Age": input(f"Enter Student {i} Age: "),
+        "Faculty": input(f"Enter Student {i} Faculty: "),
+        "Subjects": [],
+        "Address": {
+            "City": input(f"Enter Student {i} City: "),
+            "Ward_no": input(f"Enter Student {i} Ward no: "),
+            "Street": input(f"Enter Student {i} Street: ")
+        }
+    }
+    subject_count = int(input(f"How many subjects for Student {i}? "))
+    for j in range(1, subject_count + 1):
+        subject = input(f"Enter Subject {j}: ")
+        Student[f"Student{i}"]["Subjects"].append(subject)
+print("\nStudent Records:")
+print(Student)
+print(Student.keys())
+print(Student.values())
+print(Student.items())
+print(len(Student))
 
+faculty_no = int(input("Enter the student number to update: "))
+new_faculty = input("Enter new faculty: ")
+
+Student[f"Student{faculty_no}"].update({"Faculty": new_faculty})
+
+# Remove Age
+age_pop = Student["Student1"].pop("Age")
+print("Removed Age:", age_pop)
+
+# Check Student1
+if len(Student["Student1"]["Subjects"]) == 5:
+    city = Student["Student1"]["Address"]["City"].upper()
+
+    if city == "KATHMANDU":
+        print("Local Student")
+    else:
+        print("Outside Valley")
+else:
+    print("Incomplete subject list")
