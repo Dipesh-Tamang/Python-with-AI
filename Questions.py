@@ -177,7 +177,7 @@ if Name=="ABHISEK":
 
 else:
     print("No result found")
-'''
+
 #Question 6 Solving 
 Student = {}
 n = int(input("How many student records do you want to enter? "))
@@ -250,4 +250,73 @@ if len(Student["Student1"]["Subjects"]) == 5:
     else:
         print("Student1 Status : Outside Valley")
 else:
+
+#Question 7 solving
+data=[100,'Ram', 55.5, True, 'Python', 200, False, 'Kathmandu']
+print("-------Strings only---------")
+for i in data:
+    if isinstance(i,str):
+        print(i,end=",")
+print("\n-------Integers only---------")
+for i in data:
+    if isinstance(i,int):
+        if type(i)==int:
+            print(i,end=",")
+
+print("\n-------Boolean values only---------")
+for i in data:
+    if isinstance(i,bool):
+        print(i,end=",")
+
+print("\n-------How many strings are present---------")
+count=0
+for i in data:
+    if isinstance(i,str):
+        count+=1
+print(count)
+
+temp=[]
+for i in data:
+    if type(i)==str:
+        null=i
+        temp.append(null)
+print(len(temp))
     print("Student1 Status : Incomplete Subject List")
+
+#Question 8 solving
+num=[]
+for i in range(1,11):
+    n=int(input("Enter the number:"))
+    if n==0:
+        break
+    num.append(n)
+print(f"The numbers before you entered 0:{num}")
+
+
+#Question 9 solving 
+students=[]
+for i in range(1,6):
+    name=input(f"Enter name {i}:")
+    students.append(name)
+
+for i in students:
+    print(i)
+
+count=0
+for i in students:
+    if i.startswith("a") or i.startswith("A"):
+        count+=1
+print(f"There are {count} students whose name starts with A.")
+
+lng_name=[]
+shrt_nam=[]
+for i in students:
+    if len(i)>6:
+        lng=i
+        lng_name.append(lng)
+    else:
+        shrt=i
+        shrt_nam.append(shrt)
+print(f'These students have :{lng_name} long name')
+print(f'These students have :{shrt_nam} short name')
+'''
