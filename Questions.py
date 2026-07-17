@@ -319,4 +319,78 @@ for i in students:
         shrt_nam.append(shrt)
 print(f'These students have :{lng_name} long name')
 print(f'These students have :{shrt_nam} short name')
+
+
+#Question10
+students=[]
+n=int(input("How many students do you want to add?:"))
+for i in range(1,n+1):
+    name=input(f"Enter {i} student:")
+    students.append(name)
+Exc=[]
+Reg=[]
+for i in students:
+        print(f"Length of {i} is:{len(i)}")
+        if (i.upper()).startswith("A"):
+              print(f"{i} is Excellent Student!")
+              Exc.append(i)
+        else:
+              print(f"{i} is Regular Student!")
+              Reg.append(i)
+print('\n---------Excellent Students List-----------\n')
+temp=1
+for i in Exc:
+        print(f'{temp}.{i}')
+        temp+=1
+temp=(temp-temp)+1
+print('\n---------Regular Students List-----------\n')
+for i in Reg:
+        print(f'{temp}.{i}')
+        temp+=1
+
+#Question11
+Employee = {
+    "Name": "John",
+    "Salary": 50000,
+    "Department": "IT",
+    "Skills": ["Python", "Java", "SQL"]
+}
+
+def dictionary(data):
+    print(data.keys())
+    print(data.values())
+    print(len(data.keys()))
+
+    for key, value in data.items():
+        print(key, ":", value)
+
+    print("\nSkills:")
+    for skill in data["Skills"]:
+        print(skill)
+
+dictionary(Employee)
+
+#Question12
+a=('Dipesh','Anu')
+print(type(a))
+print(len(a))
+print(a[1])
+b=list(a)
+b[1]='Gyan'#Replacing the name
+print(b)
+b.append('Anu')
+print(b)
+c=tuple(b)
+print(c)
+
+#Question13
+num=[]
+for i in range(1,11):
+    n=int(input(f"Enter number {i}:"))
+    num.append(n)
+num_2=set(num)
+print(num_2)
+num_3=list(num_2)
+num_3.remove(789)
+print(num_3)
 '''
