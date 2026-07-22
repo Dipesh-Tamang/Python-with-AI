@@ -394,3 +394,26 @@ num_3=list(num_2)
 num_3.remove(789)
 print(num_3)
 '''
+
+#Question14
+class Student():
+    name="Dipesh"
+    age=20
+    roll_no=1
+    marks=39
+    def details(self):
+        return self.name,self.age,self.roll_no,self.marks
+    def percentage(self):
+        if self.marks>=80 and self.marks<=100:
+            return 'A'
+        elif self.marks>=60 and self.marks<80:
+            return 'B'
+        elif self.marks>=40 and self.marks<59:
+            return 'C'
+        else:
+            return 'F'
+        
+
+obj=Student()
+print(obj.details())
+print(obj.percentage())
