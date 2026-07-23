@@ -33,3 +33,23 @@ obj=Test1()
 print(obj.result())
 
 
+print("="*10)
+class Test2():
+    a=10
+    b=30
+
+    def display(self):
+        self.a=100
+        self.c="This is a new attribute"
+        return self.a
+
+    def display2(self):
+        return self.c
+    
+obj=Test2()
+print(obj.a)
+obj.display()
+print(obj.a)
+print(obj.c)
+obj.display2()
+print(obj.c)

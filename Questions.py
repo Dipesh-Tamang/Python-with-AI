@@ -393,7 +393,7 @@ print(num_2)
 num_3=list(num_2)
 num_3.remove(789)
 print(num_3)
-'''
+
 
 #Question14
 class Student():
@@ -417,3 +417,105 @@ class Student():
 obj=Student()
 print(obj.details())
 print(obj.percentage())
+
+
+#Question no15
+class Bank_acc():
+
+    def __init__(self,acc_no,acc_holder,bal):
+        self.acc_no=acc_no
+        self.holder=acc_holder
+        self.balance=bal
+
+    def deposit(self,amount):
+        if amount<0:
+            return f'The number should be in positive'
+        else:
+            self.balance+=amount
+            return f"{amount} is added successfully! \n Your new balance is:{self.balance}"
+
+    def withdraw(self,amount):
+        if amount>self.balance:
+            return "Insufficient balance!"
+        else:
+            self.balance-=amount
+            return f'{amount} is deducted from you Balance\n Your new balance is:{self.balance}'
+
+    def current_balance(self):
+        return f'Account number:{self.acc_no}\nAccount Holder:{self.holder}\nBalance:{self.balance}'
+
+obj=Bank_acc(123,"Dipesh",10000)
+obj.deposit(10000)
+obj.withdraw(5000)
+print(obj.current_balance())
+         
+
+#Question no 16
+class Student():
+
+        def __init__(self,std_id,std_name,std_fac,std_marks):
+            self.id=std_id
+            self.name=std_name
+            self.faculty=std_fac
+            self.marks=std_marks
+
+        def add_marks(self,plus_marks):
+            if plus_marks<0:
+                return 'Please provide positive marks!'
+            else:
+                self.marks+=plus_marks
+                return self.marks
+
+        def deduct_marks(self, minus_marks):
+            if minus_marks < 0:
+                return "Please provide positive marks!"
+            else:
+                self.marks -= minus_marks
+                return self.marks
+
+        def student_result(self):
+            if self.marks>=80:
+                return 'Distinction'
+            elif self.marks>=60:
+                return 'First Division'
+            else:
+                return 'Need Improvement'
+
+        def display(self):
+            return f"Name:{self.name}\nId:{self.id}\nFaculty:{self.faculty}\nMarks:{self.marks}"  
+
+obj=Student(1,'Dipesh','Management',60)
+obj.add_marks(20)
+obj.deduct_marks(5)
+print(obj.display())
+   '''
+#Question 17
+class Employee():
+
+    def __init__(self,emp_id,name,dept,salary):
+        self.empid=emp_id
+        self.name=name
+        self.dept=dept
+        self.salary=salary
+
+    def increase_salary(self,amount):
+        if amount>0:
+            self.salary+=amount
+            return self.salary
+        else:
+            return 'Please enter positive number'
+
+    def decrease_salary(self,amount):
+        if amount>self.salary:
+            return f'Please deduct salary with in the range of {self.salary}'
+        else:
+            self.salary-=amount
+            return self.salary
+
+    def display(self):
+        return f"Name:{self.name}\nId:{self.empid}\nDepartment:{self.dept}\nSalary:{self.salary}"
+
+obj=Employee(101,'Dipesh','Marketing',50000)
+obj.increase_salary(10000)
+obj.decrease_salary(4000)
+print(obj.display())
